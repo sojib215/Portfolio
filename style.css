@@ -1,0 +1,111 @@
+/* Navbar fixed */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+/* Link initial animation */
+.nav-item {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease; /* দ্রুত করা হলো */
+}
+.nav-item.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Hover underline animation */
+.underline-hover::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: white;
+  transition: width 0.3s ease;
+  margin-top: 2px;
+}
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+/* Clicked link white border */
+.active {
+  border-bottom: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+/* Mobile menu left align */
+@media (max-width: 768px) {
+  #nav-menu a {
+    text-align: left;
+  }
+}
+
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.active {
+  border-bottom: 2px solid white;
+}
+
+.underline-hover::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: white;
+  transition: width 0.3s ease;
+  margin-top: 2px;
+}
+
+.underline-hover:hover::after {
+  width: 100%;
+}
+body {
+  padding-top: 80px; /* navbar height অনুযায়ী adjust */
+}
+
+/* All elements initially start invisible and slightly offset. */
+.section-animate {
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s; /* দ্রুত করা হলো */
+  transition-delay: var(--animation-delay, 0s); 
+}
+
+.section-animate[data-animation="fade-in-up"] {
+  transform: translateY(15px); /* দূরত্ব কমানো হলো */
+}
+
+.section-animate[data-animation="fade-in-right"] {
+  transform: translateX(-15px); /* দূরত্ব কমানো হলো */
+}
+
+.section-animate[data-animation="fade-in-left"] {
+  transform: translateX(15px); /* দূরত্ব কমানো হলো */
+}
+
+/* Final state when element is visible (added by JavaScript) */
+.section-animate.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
