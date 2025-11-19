@@ -132,3 +132,40 @@ function floatButtons() {
 requestAnimationFrame(floatButtons);
 
 
+// --- Modal Logic (Required for the list to work) ---
+const modal = document.getElementById('serviceModal');
+const backdrop = document.getElementById('modalBackdrop');
+const panel = document.getElementById('modalPanel');
+
+function openModal(title, description) {
+    modal.classList.remove('hidden');
+    // ডাটা বসানো
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalDesc').innerText = description;
+    
+    // এনিমেশন
+    setTimeout(() => {
+        backdrop.classList.remove('opacity-0');
+        panel.classList.remove('scale-95', 'opacity-0');
+        panel.classList.add('scale-100', 'opacity-100');
+    }, 10);
+}
+
+// বাকি কোড আগের মতোই...
+
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const serviceCards = document.querySelectorAll('.service-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        serviceCards.forEach(card => {
+          if(filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
