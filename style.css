@@ -1,3 +1,4 @@
+
 /* Navbar fixed */
 nav {
   position: fixed;
@@ -148,4 +149,3 @@ body {
     .flip-card:hover .flip-inner { transform: rotateY(180deg); }
     .flip-front, .flip-back { backface-visibility: hidden; }
     .flip-back { transform: rotateY(180deg); }
-    
