@@ -149,3 +149,56 @@ body {
     .flip-card:hover .flip-inner { transform: rotateY(180deg); }
     .flip-front, .flip-back { backface-visibility: hidden; }
     .flip-back { transform: rotateY(180deg); }
+
+
+
+    :root {
+    color-scheme: dark;
+}
+
+.bg-sky-50 {
+    background-color: #0c1a2b !important;
+}
+
+.text-sky-800 {
+    color: #9cc7ff !important;
+}
+
+.hover\:bg-sky-100:hover {
+    background-color: #11263d !important;
+}
+
+
+
+/* Core Development badges */
+.bg-sky-50, .dark\:bg-sky-900 {
+    background-color: #1e2a47 !important; /* dark navy */
+}
+.text-sky-800, .dark\:text-sky-300 {
+    color: #69a1ff !important; /* light sky text */
+}
+.hover\:bg-sky-100:hover, .dark\:hover\:bg-sky-800:hover {
+    background-color: #274070 !important; /* hover dark navy */
+}
+
+/* Design & Tools badges */
+.bg-indigo-50, .dark\:bg-indigo-900 {
+    background-color: #2e2347 !important; /* dark indigo */
+}
+.text-indigo-800, .dark\:text-indigo-300 {
+    color: #a18fff !important; /* light indigo text */
+}
+.hover\:bg-indigo-100:hover, .dark\:hover\:bg-indigo-800:hover {
+    background-color: #3a2e6e !important; /* hover dark indigo */
+}
+
+/* Soft Skills badges */
+.bg-purple-50, .dark\:bg-purple-900 {
+    background-color: #3a1f47 !important; /* dark purple */
+}
+.text-purple-800, .dark\:text-purple-300 {
+    color: #c58fff !important; /* light purple text */
+}
+.hover\:bg-purple-100:hover, .dark\:hover\:bg-purple-800:hover {
+    background-color: #552e6e !important; /* hover dark purple */
+}
