@@ -169,3 +169,53 @@ function openModal(title, description) {
         });
       });
     });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elementsToAnimate = document.querySelectorAll('.initial-hidden');
+
+    elementsToAnimate.forEach((element, index) => {
+        const delay = index * 200; 
+        setTimeout(() => {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }, 300 + delay);
+    });
+
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitButton');
+
+    if (form && submitBtn) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> পাঠাচ্ছি...';
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed', 'bg-gray-500');
+            submitBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> পাঠানো হয়েছে!';
+                submitBtn.classList.add('bg-green-600');
+                submitBtn.classList.remove('bg-gray-500');
+                
+                form.reset(); 
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.classList.remove('bg-green-600', 'opacity-75', 'cursor-not-allowed');
+                    submitBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                }, 3000);
+
+            }, 2000);
+        });
+    }
+});
+
+
+
+
+    
