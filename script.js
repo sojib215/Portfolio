@@ -215,6 +215,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+ function openProject(url) {
+      window.open(url, "_blank");
+    } 
+
+function openPopup(title, link) {
+  document.getElementById('popupTitle').innerText = title;
+  document.getElementById('popupLink').href = link;
+
+  document.getElementById('popup').classList.remove('hidden');
+
+  setTimeout(() => {
+    document.getElementById('popupBox').classList.remove('scale-75', 'opacity-0');
+    document.getElementById('popupBox').classList.add('scale-100', 'opacity-100');
+  }, 10);
+}
+
+function closePopup() {
+  const box = document.getElementById('popupBox');
+  box.classList.add('scale-75', 'opacity-0');
+
+  setTimeout(() => {
+    document.getElementById('popup').classList.add('hidden');
+  }, 200);
+}
 
  
 

@@ -202,3 +202,103 @@ body {
 .hover\:bg-purple-100:hover, .dark\:hover\:bg-purple-800:hover {
     background-color: #552e6e !important; /* hover dark purple */
 }
+
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide {
+  animation: fadeSlide 0.8s ease-out forwards;
+}
+
+/* Lite footer entrance */
+.footer-animate {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: footerFade 0.6s ease-out forwards;
+}
+
+@keyframes footerFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger child fade items */
+.fade-item {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeItem 0.5s ease-out forwards;
+}
+
+.fade-item:nth-child(1) { animation-delay: 0.15s; }
+.fade-item:nth-child(2) { animation-delay: 0.25s; }
+.fade-item:nth-child(3) { animation-delay: 0.35s; }
+.fade-item:nth-child(4) { animation-delay: 0.45s; }
+
+@keyframes fadeItem {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* CARD DESIGN */
+.card {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(75, 85, 99, 0.4);
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: .2s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99, 102, 241, .6);
+  box-shadow: 0 0 18px rgba(99, 102, 241, .2);
+}
+.title { color: white; font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; }
+.desc { color: #9CA3AF; margin-bottom: 16px; }
+
+.btn {
+  background: #4f46e5;
+  width: 100%;
+  padding: 10px;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 500;
+  transition: .2s;
+}
+.btn:hover {
+  background: #4338ca;
+  box-shadow: 0 0 12px #4f46e580;
+}
+
+/* FAST STAGGER ANIMATION */
+.project-card {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fastFade .35s ease-out forwards;
+}
+.project-card:nth-child(1){ animation-delay: .05s; }
+.project-card:nth-child(2){ animation-delay: .10s; }
+.project-card:nth-child(3){ animation-delay: .15s; }
+.project-card:nth-child(4){ animation-delay: .20s; }
+.project-card:nth-child(5){ animation-delay: .25s; }
+.project-card:nth-child(6){ animation-delay: .30s; }
+
+@keyframes fastFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
