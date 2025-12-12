@@ -1,171 +1,245 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/online-resume.png" type="image/x-icon" />
     <style>
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fadeIn {
-    animation: fadeIn 1s ease forwards;
-  }
-  .animate-slideUp {
-    animation: slideUp 1s ease forwards;
-  }
-</style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 1s ease forwards;
+      }
+      .animate-slideUp {
+        animation: slideUp 1s ease forwards;
+      }
+    </style>
+  </head>
 
-
-</head>
-
-<body class="bg-[#0f1a2b] text-white">
-
+  <body class="bg-[#0f1a2b] text-white">
     <!-- Navbar placeholder -->
     <div id="navbar-placeholder"></div>
 
-    
-    
-<!-- CONTACT SECTION -->
-<section class="max-w-5xl mx-auto pt-32 pb-20 px-6">
+    <!-- CONTACT SECTION -->
+    <section class="max-w-5xl mx-auto pt-32 pb-20 px-6">
+      <h1 class="text-4xl font-bold mb-8 text-gray-200 text-center">
+        Contact Me
+      </h1>
 
-  <h1 class="text-4xl font-bold mb-8 text-gray-200 text-center">
-    Contact Me
-  </h1>
+      <div class="bg-gray-800 p-8 rounded-xl shadow-lg">
+        <form class="space-y-5" id="contactForm">
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="w-full p-4 rounded-md bg-gray-700 border border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
+          />
 
-  <div class="bg-gray-800 p-8 rounded-xl shadow-lg">
-    <form class="space-y-5" id="contactForm">
-      <input type="text" placeholder="Your Name" 
-        class="w-full p-4 rounded-md bg-gray-700 border border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 transition">
+          <input
+            type="email"
+            placeholder="Your Email"
+            class="w-full p-4 rounded-md bg-gray-700 border border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
+          />
 
-      <input type="email" placeholder="Your Email" 
-        class="w-full p-4 rounded-md bg-gray-700 border border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 transition">
+          <textarea
+            rows="5"
+            placeholder="Your Message"
+            class="w-full p-4 rounded-md bg-gray-700 border border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
+          ></textarea>
 
-      <textarea rows="5" placeholder="Your Message" 
-        class="w-full p-4 rounded-md bg-gray-700 border border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"></textarea>
+          <button
+            type="submit"
+            class="w-full py-3 rounded-md bg-sky-500 hover:bg-sky-600 text-white font-semibold transition shadow-md"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
 
-      <button type="submit" 
-        class="w-full py-3 rounded-md bg-sky-500 hover:bg-sky-600 text-white font-semibold transition shadow-md">
-        Send Message
-      </button>
-    </form>
-  </div>
-
-</section>
-
-
-
-<!-- CUSTOM CENTERED MODAL ALERT -->
-<div id="customAlert" class="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500 z-50">
-  <div class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl shadow-2xl max-w-sm w-full p-8 text-center transform scale-75 transition-transform duration-500">
-    <!-- Icon -->
-    <div class="flex justify-center mb-4">
-      <div class="bg-white/20 p-4 rounded-full shadow-lg animate-bounce">
-        <span class="text-3xl">✅</span>
+    <!-- CUSTOM CENTERED MODAL ALERT -->
+    <div
+      id="customAlert"
+      class="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500 z-50"
+    >
+      <div
+        class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl shadow-2xl max-w-sm w-full p-8 text-center transform scale-75 transition-transform duration-500"
+      >
+        <!-- Icon -->
+        <div class="flex justify-center mb-4">
+          <div class="bg-white/20 p-4 rounded-full shadow-lg animate-bounce">
+            <span class="text-3xl">✅</span>
+          </div>
+        </div>
+        <!-- Message -->
+        <p
+          class="text-white text-xl font-bold tracking-wide mb-6 drop-shadow-lg"
+        >
+          Thank you for your message!
+        </p>
+        <!-- Button -->
+        <button
+          id="closeAlert"
+          class="bg-white/30 hover:bg-white/50 text-white font-semibold py-2 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105"
+        >
+          ✨ Close
+        </button>
       </div>
     </div>
-    <!-- Message -->
-    <p class="text-white text-xl font-bold tracking-wide mb-6 drop-shadow-lg">Thank you for your message!</p>
-    <!-- Button -->
-    <button id="closeAlert" class="bg-white/30 hover:bg-white/50 text-white font-semibold py-2 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105">
-      ✨ Close
-    </button>
-  </div>
-</div>
 
-<script>
-  const form = document.getElementById('contactForm');
-  const alertBox = document.getElementById('customAlert');
-  const closeBtn = document.getElementById('closeAlert');
+    <script>
+      const form = document.getElementById("contactForm");
+      const alertBox = document.getElementById("customAlert");
+      const closeBtn = document.getElementById("closeAlert");
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    // Show modal with animation
-    alertBox.classList.remove('opacity-0', 'pointer-events-none');
-    const modal = alertBox.querySelector('div');
-    modal.classList.remove('scale-75');
-    modal.classList.add('scale-100');
+        // Show modal with animation
+        alertBox.classList.remove("opacity-0", "pointer-events-none");
+        const modal = alertBox.querySelector("div");
+        modal.classList.remove("scale-75");
+        modal.classList.add("scale-100");
 
-    form.reset();
-  });
+        form.reset();
+      });
 
-  // Close button functionality
-  closeBtn.addEventListener('click', () => {
-    const modal = alertBox.querySelector('div');
-    modal.classList.remove('scale-100');
-    modal.classList.add('scale-75');
-    setTimeout(() => {
-      alertBox.classList.add('opacity-0', 'pointer-events-none');
-    }, 300); // smooth transition before hiding
-  });
-</script>
+      // Close button functionality
+      closeBtn.addEventListener("click", () => {
+        const modal = alertBox.querySelector("div");
+        modal.classList.remove("scale-100");
+        modal.classList.add("scale-75");
+        setTimeout(() => {
+          alertBox.classList.add("opacity-0", "pointer-events-none");
+        }, 300); // smooth transition before hiding
+      });
+    </script>
 
+    <footer
+      id="main-footer"
+      class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-200 backdrop-blur-sm border-t border-transparent py-10 md:py-12"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left"
+        >
+          <!-- Brand -->
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-400 mb-2">H.H. Sojib</h3>
+            <p class="text-sm text-gray-300">Full-Stack Development & Design</p>
+          </div>
 
-<footer 
-    id="main-footer"
-    class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-200 backdrop-blur-sm border-t border-transparent py-10 md:py-12"
->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            
-            <!-- Brand -->
-            <div>
-                <h3 class="text-2xl font-bold text-indigo-400 mb-2">H.H. Sojib</h3>
-                <p class="text-sm text-gray-300">Full-Stack Development & Design</p>
+          <!-- Quick Links -->
+          <div>
+            <h4
+              class="text-lg font-semibold mb-4 border-b border-gray-600 inline-block pb-1"
+            >
+              Quick Links
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="index.html" class="hover:text-indigo-400 transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-indigo-400 transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-indigo-400 transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social -->
+          <div>
+            <h4
+              class="text-lg font-semibold mb-4 border-b border-gray-600 inline-block pb-1"
+            >
+              Connect
+            </h4>
+            <div class="flex justify-center md:justify-start space-x-6 mt-2">
+              <a
+                href="https://github.com/habibulhasansojib"
+                target="_blank"
+                class="hover:text-indigo-400 transition transform hover:scale-110"
+              >
+                <span class="sr-only">GitHub</span>
+                <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.418 2.867 8.165 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.465-1.11-1.465-.908-.614.067-.6.067-.6 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.085 2.91.828.092-.64.354-1.085.645-1.334-2.22-.251-4.553-1.115-4.553-4.954 0-1.093.39-1.988 1.029-2.685-.103-.252-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.639.696 1.028 1.592 1.028 2.685 0 3.839-2.339 4.69-4.566 4.943.359.309.678.92.678 1.855 0 1.334-.012 2.41-.012 2.737 0 .267.18.586.688.484C19.14 20.183 22 16.435 22 12.017 22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="hover:text-indigo-400 transition transform hover:scale-110"
+              >
+                <span class="sr-only">LinkedIn</span>
+                <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.529-4 0v5.604h-3v-11h3v1.765c1.397-2.618 6-2.507 6 2.443v6.792z"
+                  />
+                </svg>
+              </a>
             </div>
-
-            <!-- Quick Links -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4 border-b border-gray-600 inline-block pb-1">Quick Links</h4>
-                <ul class="space-y-2">
-                    <li><a href="index.html" class="hover:text-indigo-400 transition">Home</a></li>
-                    <li><a href="services.html" class="hover:text-indigo-400 transition">Services</a></li>
-                    <li><a href="contact.html" class="hover:text-indigo-400 transition">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Social -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4 border-b border-gray-600 inline-block pb-1">Connect</h4>
-                <div class="flex justify-center md:justify-start space-x-6 mt-2">
-                    <a href="https://github.com/habibulhasansojib" target="_blank" class="hover:text-indigo-400 transition transform hover:scale-110">
-                        <span class="sr-only">GitHub</span>
-                        <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.418 2.867 8.165 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.465-1.11-1.465-.908-.614.067-.6.067-.6 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.085 2.91.828.092-.64.354-1.085.645-1.334-2.22-.251-4.553-1.115-4.553-4.954 0-1.093.39-1.988 1.029-2.685-.103-.252-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.639.696 1.028 1.592 1.028 2.685 0 3.839-2.339 4.69-4.566 4.943.359.309.678.92.678 1.855 0 1.334-.012 2.41-.012 2.737 0 .267.18.586.688.484C19.14 20.183 22 16.435 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="hover:text-indigo-400 transition transform hover:scale-110">
-                        <span class="sr-only">LinkedIn</span>
-                        <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.529-4 0v5.604h-3v-11h3v1.765c1.397-2.618 6-2.507 6 2.443v6.792z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+          </div>
         </div>
 
         <div class="mt-8 pt-6 border-t border-border-gray-600 text-center">
-            <p class="text-sm text-gray-300">&copy; <span id="current-year-footer"></span> Habibul Hasan Sojib. All rights reserved.</p>
+          <p class="text-sm text-gray-300">
+            &copy; <span id="current-year-footer"></span> Habibul Hasan Sojib.
+            All rights reserved.
+          </p>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<button id="scrollToTopBtn" 
-    class="fixed bottom-6 right-6 p-4 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 transition duration-200 transform scale-100 opacity-0 invisible z-50 hover:scale-110"
-    aria-label="Scroll to top">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-    </svg>
-    
-</button>
+    <button
+      id="scrollToTopBtn"
+      class="fixed bottom-6 right-6 p-4 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 transition duration-200 transform scale-100 opacity-0 invisible z-50 hover:scale-110"
+      aria-label="Scroll to top"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        ></path>
+      </svg>
+    </button>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

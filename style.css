@@ -1,4 +1,3 @@
-
 /* Navbar fixed */
 nav {
   position: fixed;
@@ -21,7 +20,7 @@ nav {
 
 /* Hover underline animation */
 .underline-hover::after {
-  content: '';
+  content: "";
   display: block;
   height: 2px;
   width: 0%;
@@ -46,7 +45,6 @@ nav {
   }
 }
 
-
 nav {
   position: fixed;
   top: 0;
@@ -60,7 +58,7 @@ nav {
 }
 
 .underline-hover::after {
-  content: '';
+  content: "";
   display: block;
   height: 2px;
   width: 0%;
@@ -79,8 +77,10 @@ body {
 /* All elements initially start invisible and slightly offset. */
 .section-animate {
   opacity: 0;
-  transition: opacity 0.5s, transform 0.5s; /* দ্রুত করা হলো */
-  transition-delay: var(--animation-delay, 0s); 
+  transition:
+    opacity 0.5s,
+    transform 0.5s; /* দ্রুত করা হলো */
+  transition-delay: var(--animation-delay, 0s);
 }
 
 .section-animate[data-animation="fade-in-up"] {
@@ -101,10 +101,15 @@ body {
   transform: translate(0, 0);
 }
 
-
 @keyframes fade-up {
-  0% { opacity: 0; transform: translateY(24px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-up {
@@ -117,92 +122,136 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, rgba(59,130,246,0.1), transparent 60%);
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.1),
+    transparent 60%
+  );
   animation: spin 25s linear infinite;
 }
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .fade-text {
   animation: fadeIn 0.7s ease-out forwards;
 }
 @keyframes fadeIn {
-  to { opacity: 1; transform: translateY(0); }
-}  @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .animate-fadeIn {
-    animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  .delay-75 { animation-delay: 0.075s; }
-  .delay-150 { animation-delay: 0.15s; }
-  .delay-200 { animation-delay: 0.2s; }
-  .delay-250 { animation-delay: 0.25s; }
-  .delay-300 { animation-delay: 0.3s; }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s forwards;
+}
+.delay-75 {
+  animation-delay: 0.075s;
+}
+.delay-150 {
+  animation-delay: 0.15s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-250 {
+  animation-delay: 0.25s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
 
-    /* Flip Card Styles */
-    .flip-card { perspective: 1000px; }
-    .flip-inner { transition: transform 0.6s; transform-style: preserve-3d; }
-    .flip-card:hover .flip-inner { transform: rotateY(180deg); }
-    .flip-front, .flip-back { backface-visibility: hidden; }
-    .flip-back { transform: rotateY(180deg); }
+/* Flip Card Styles */
+.flip-card {
+  perspective: 1000px;
+}
+.flip-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-front,
+.flip-back {
+  backface-visibility: hidden;
+}
+.flip-back {
+  transform: rotateY(180deg);
+}
 
-
-
-    :root {
-    color-scheme: dark;
+:root {
+  color-scheme: dark;
 }
 
 .bg-sky-50 {
-    background-color: #0c1a2b !important;
+  background-color: #0c1a2b !important;
 }
 
 .text-sky-800 {
-    color: #9cc7ff !important;
+  color: #9cc7ff !important;
 }
 
 .hover\:bg-sky-100:hover {
-    background-color: #11263d !important;
+  background-color: #11263d !important;
 }
-
-
 
 /* Core Development badges */
-.bg-sky-50, .dark\:bg-sky-900 {
-    background-color: #1e2a47 !important; /* dark navy */
+.bg-sky-50,
+.dark\:bg-sky-900 {
+  background-color: #1e2a47 !important; /* dark navy */
 }
-.text-sky-800, .dark\:text-sky-300 {
-    color: #69a1ff !important; /* light sky text */
+.text-sky-800,
+.dark\:text-sky-300 {
+  color: #69a1ff !important; /* light sky text */
 }
-.hover\:bg-sky-100:hover, .dark\:hover\:bg-sky-800:hover {
-    background-color: #274070 !important; /* hover dark navy */
+.hover\:bg-sky-100:hover,
+.dark\:hover\:bg-sky-800:hover {
+  background-color: #274070 !important; /* hover dark navy */
 }
 
 /* Design & Tools badges */
-.bg-indigo-50, .dark\:bg-indigo-900 {
-    background-color: #2e2347 !important; /* dark indigo */
+.bg-indigo-50,
+.dark\:bg-indigo-900 {
+  background-color: #2e2347 !important; /* dark indigo */
 }
-.text-indigo-800, .dark\:text-indigo-300 {
-    color: #a18fff !important; /* light indigo text */
+.text-indigo-800,
+.dark\:text-indigo-300 {
+  color: #a18fff !important; /* light indigo text */
 }
-.hover\:bg-indigo-100:hover, .dark\:hover\:bg-indigo-800:hover {
-    background-color: #3a2e6e !important; /* hover dark indigo */
+.hover\:bg-indigo-100:hover,
+.dark\:hover\:bg-indigo-800:hover {
+  background-color: #3a2e6e !important; /* hover dark indigo */
 }
 
 /* Soft Skills badges */
-.bg-purple-50, .dark\:bg-purple-900 {
-    background-color: #3a1f47 !important; /* dark purple */
+.bg-purple-50,
+.dark\:bg-purple-900 {
+  background-color: #3a1f47 !important; /* dark purple */
 }
-.text-purple-800, .dark\:text-purple-300 {
-    color: #c58fff !important; /* light purple text */
+.text-purple-800,
+.dark\:text-purple-300 {
+  color: #c58fff !important; /* light purple text */
 }
-.hover\:bg-purple-100:hover, .dark\:hover\:bg-purple-800:hover {
-    background-color: #552e6e !important; /* hover dark purple */
+.hover\:bg-purple-100:hover,
+.dark\:hover\:bg-purple-800:hover {
+  background-color: #552e6e !important; /* hover dark purple */
 }
-
 
 @keyframes fadeSlide {
   0% {
@@ -240,10 +289,18 @@ body {
   animation: fadeItem 0.5s ease-out forwards;
 }
 
-.fade-item:nth-child(1) { animation-delay: 0.15s; }
-.fade-item:nth-child(2) { animation-delay: 0.25s; }
-.fade-item:nth-child(3) { animation-delay: 0.35s; }
-.fade-item:nth-child(4) { animation-delay: 0.45s; }
+.fade-item:nth-child(1) {
+  animation-delay: 0.15s;
+}
+.fade-item:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.fade-item:nth-child(3) {
+  animation-delay: 0.35s;
+}
+.fade-item:nth-child(4) {
+  animation-delay: 0.45s;
+}
 
 @keyframes fadeItem {
   to {
@@ -258,16 +315,24 @@ body {
   border: 1px solid rgba(75, 85, 99, 0.4);
   padding: 22px;
   border-radius: 14px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  transition: .2s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
 }
 .card:hover {
   transform: translateY(-6px);
-  border-color: rgba(99, 102, 241, .6);
-  box-shadow: 0 0 18px rgba(99, 102, 241, .2);
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 0 18px rgba(99, 102, 241, 0.2);
 }
-.title { color: white; font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; }
-.desc { color: #9CA3AF; margin-bottom: 16px; }
+.title {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.desc {
+  color: #9ca3af;
+  margin-bottom: 16px;
+}
 
 .btn {
   background: #4f46e5;
@@ -276,7 +341,7 @@ body {
   border-radius: 0.5rem;
   color: white;
   font-weight: 500;
-  transition: .2s;
+  transition: 0.2s;
 }
 .btn:hover {
   background: #4338ca;
@@ -287,14 +352,26 @@ body {
 .project-card {
   opacity: 0;
   transform: translateY(25px);
-  animation: fastFade .35s ease-out forwards;
+  animation: fastFade 0.35s ease-out forwards;
 }
-.project-card:nth-child(1){ animation-delay: .05s; }
-.project-card:nth-child(2){ animation-delay: .10s; }
-.project-card:nth-child(3){ animation-delay: .15s; }
-.project-card:nth-child(4){ animation-delay: .20s; }
-.project-card:nth-child(5){ animation-delay: .25s; }
-.project-card:nth-child(6){ animation-delay: .30s; }
+.project-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.project-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.project-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.project-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.project-card:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.project-card:nth-child(6) {
+  animation-delay: 0.3s;
+}
 
 @keyframes fastFade {
   to {

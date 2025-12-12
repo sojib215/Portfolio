@@ -1,155 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/fab.jpg" type="image/x-icon" >
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/online-resume.png" type="image/x-icon" />
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
 
     <div class="bg-gray-900 text-gray-100">
+      <!-- Header -->
+      <header
+        class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-10 rounded-b-3xl shadow-xl overflow-hidden animate-fade-slide"
+      >
+        <div
+          class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"
+        ></div>
 
-  <!-- Header -->
-<header class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-10 rounded-b-3xl shadow-xl overflow-hidden animate-fade-slide">
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"></div>
+        <h1
+          class="text-4xl md:text-5xl font-extrabold text-center text-white tracking-wide"
+        >
+          My Projects
+        </h1>
+        <p class="mt-2 text-center text-gray-300 text-lg">
+          Showcasing my creative works
+        </p>
+      </header>
 
-    <h1 class="text-4xl md:text-5xl font-extrabold text-center text-white tracking-wide">
-        My Projects
-    </h1>
-    <p class="mt-2 text-center text-gray-300 text-lg">
-        Showcasing my creative works
-    </p>
-</header>
+      <!-- Projects Section -->
+      <section
+        class="max-w-6xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        <!-- CARD -->
+        <div class="project-card card">
+          <h2 class="title">Portfolio Website</h2>
+          <p class="desc">
+            Modern portfolio built with Html & CSS. It was my frist project.
+          </p>
 
-  <!-- Projects Section -->
-  <section class="max-w-6xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <button
+            onclick="openPopup('Portfolio Website', 'https://sojib215.github.io/web-dev-protfolio/')"
+            class="btn"
+          >
+            View Project
+          </button>
+        </div>
 
-  <!-- CARD -->
-  <div class="project-card card">
-    <h2 class="title">Portfolio Website</h2>
-    <p class="desc">Modern portfolio built with Html & CSS. It was my frist project.</p>
+        <div class="project-card card">
+          <h2 class="title">Emergency-Hotline</h2>
+          <p class="desc">
+            An emergency hotline services build with all needed number's.
+          </p>
 
-    <button onclick="openPopup('Portfolio Website', 'https://sojib215.github.io/web-dev-protfolio/')" class="btn">
-      View Project
-    </button>
-  </div>
+          <button
+            onclick="openPopup('Emergency-Hotline', 'https://sojib215.github.io/Assainment-5/')"
+            class="btn"
+          >
+            View Project
+          </button>
+        </div>
 
-  <div class="project-card card">
-    <h2 class="title">Emergency-Hotline</h2>
-    <p class="desc">An emergency hotline services build with all needed number's.</p>
+        <div class="project-card card">
+          <h2 class="title">Flower Shop</h2>
+          <p class="desc">
+            Responsive flower shopping interface with animations.
+          </p>
 
-    <button onclick="openPopup('Emergency-Hotline', 'https://sojib215.github.io/Assainment-5/')" class="btn">
-      View Project
-    </button>
-  </div>
+          <button
+            onclick="openPopup('Flower Shop', 'https://sojib215.github.io/Second-assainment/')"
+            class="btn"
+          >
+            View Project
+          </button>
+        </div>
 
-  <div class="project-card card">
-    <h2 class="title">Flower Shop</h2>
-    <p class="desc">Responsive flower shopping interface with animations.</p>
+        <div class="project-card card">
+          <h2 class="title">News TV</h2>
+          <p class="desc">
+            A news reporting channel made for fun Nothing else.
+          </p>
 
-    <button onclick="openPopup('Flower Shop', 'https://sojib215.github.io/Second-assainment/')" class="btn">
-      View Project
-    </button>
-  </div>
+          <button
+            onclick="openPopup('News TV', 'https://sojib215.github.io/Anwar-TV/')"
+            class="btn"
+          >
+            View Project
+          </button>
+        </div>
 
-  <div class="project-card card">
-    <h2 class="title">News TV</h2>
-    <p class="desc"> A news reporting channel made for fun Nothing else.</p>
+        <div class="project-card card">
+          <h2 class="title">Tree Information</h2>
+          <p class="desc">
+            And website for learn more about trees to Increase knowledge.
+          </p>
 
-    <button onclick="openPopup('News TV', 'https://sojib215.github.io/Anwar-TV/')" class="btn">
-      View Project
-    </button>
-  </div>
+          <button
+            onclick="openPopup('Tree Information', 'https://willowy-beijinho-ccbd6c.netlify.app')"
+            class="btn"
+          >
+            View Project
+          </button>
+        </div>
 
-  <div class="project-card card">
-    <h2 class="title">Tree Information</h2>
-    <p class="desc"> And website for learn more about trees to Increase knowledge.</p>
+        <div class="project-card card">
+          <h2 class="title">UI Template</h2>
+          <p class="desc">
+            A normal UI template page for beginners to use not for real.
+          </p>
 
-    <button onclick="openPopup('Tree Information', 'https://willowy-beijinho-ccbd6c.netlify.app')" class="btn">
-      View Project
-    </button>
-  </div>
+          <button
+            onclick="openPopup('UI Template', 'https://sojib215.github.io/Frist-assainment/')"
+            class="btn"
+          >
+            View Project
+          </button>
+        </div>
+      </section>
 
-  <div class="project-card card">
-    <h2 class="title">UI Template</h2>
-    <p class="desc"> A normal UI template page for beginners to use not for real. </p>
+      <!-- POPUP MODAL -->
+      <div
+        id="popup"
+        class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[999]"
+      >
+        <div
+          id="popupBox"
+          class="bg-gray-900 rounded-xl p-6 w-80 text-center border border-gray-700 shadow-xl scale-75 opacity-0 transition-all duration-300"
+        >
+          <h1
+            id="popupTitle"
+            class="text-xl font-semibold text-white mb-3"
+          ></h1>
 
-    <button onclick="openPopup('UI Template', 'https://sojib215.github.io/Frist-assainment/')" class="btn">
-      View Project
-    </button>
-  </div>
+          <a
+            id="popupLink"
+            href="#"
+            target="_blank"
+            class="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium hover:bg-indigo-700 block"
+          >
+            Open Project
+          </a>
 
-</section>
+          <button
+            onclick="closePopup()"
+            class="mt-4 text-gray-300 w-24 hover:text-white transition hover:bg-indigo-700 px-4 py-2 rounded-lg"
+          >
+            Close
+          </button>
+        </div>
+      </div>
 
+      <!-- Footer -->
 
-<!-- POPUP MODAL -->
-<div id="popup" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[999]">
-  <div id="popupBox" class="bg-gray-900 rounded-xl p-6 w-80 text-center border border-gray-700 shadow-xl 
-                          scale-75 opacity-0 transition-all duration-300">
+      <footer
+        class="bg-gray-900 border-t border-gray-700/50 mt-16 py-10 relative overflow-hidden footer-animate"
+      >
+        <!-- Background subtle glow -->
+        <div
+          class="absolute inset-0 opacity-10 bg-gradient-to-br from-indigo-600 to-purple-600 blur-3xl"
+        ></div>
 
-    <h1 id="popupTitle" class="text-xl font-semibold text-white mb-3"></h1>
+        <div
+          class="max-w-6xl mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-3 gap-10"
+        >
+          <!-- Column 1 -->
+          <div class="fade-item">
+            <h3 class="text-xl font-semibold text-white mb-3">Sojib.dev</h3>
+            <p class="text-gray-400 leading-relaxed">
+              Building clean interfaces & modern web experiences.
+            </p>
+          </div>
 
-    <a id="popupLink" href="#" target="_blank" 
-       class="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium hover:bg-indigo-700 block">
-       Open Project
-    </a>
+          <!-- Column 2 -->
+          <div class="fade-item">
+            <h3 class="text-xl font-semibold text-white mb-3">Quick Links</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white transition">Home</a></li>
+              <li>
+                <a href="#" class="hover:text-white transition">Projects</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Contact</a>
+              </li>
+            </ul>
+          </div>
 
-    <button onclick="closePopup()" 
-            class="mt-4 text-gray-300 w-24 hover:text-white transition hover:bg-indigo-700 px-4 py-2 rounded-lg">
-      Close
-    </button>
-  </div>
-</div>
+          <!-- Column 3 -->
+          <div class="fade-item">
+            <h3 class="text-xl font-semibold text-white mb-3">Social</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition">GitHub</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Facebook</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">LinkedIn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-  <!-- Footer -->
-
-  <footer class="bg-gray-900 border-t border-gray-700/50 mt-16 py-10 relative overflow-hidden footer-animate">
-
-  <!-- Background subtle glow -->
-  <div class="absolute inset-0 opacity-10 bg-gradient-to-br from-indigo-600 to-purple-600 blur-3xl"></div>
-
-  <div class="max-w-6xl mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-3 gap-10">
-
-    <!-- Column 1 -->
-    <div class="fade-item">
-      <h3 class="text-xl font-semibold text-white mb-3">Sojib.dev</h3>
-      <p class="text-gray-400 leading-relaxed">
-        Building clean interfaces & modern web experiences.
-      </p>
+        <div class="text-center text-gray-500 mt-10 relative z-10 fade-item">
+          © 2025 Sojib — All rights reserved.
+        </div>
+      </footer>
     </div>
-
-    <!-- Column 2 -->
-    <div class="fade-item">
-      <h3 class="text-xl font-semibold text-white mb-3">Quick Links</h3>
-      <ul class="space-y-2 text-gray-400">
-        <li><a href="#" class="hover:text-white transition">Home</a></li>
-        <li><a href="#" class="hover:text-white transition">Projects</a></li>
-        <li><a href="#" class="hover:text-white transition">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 3 -->
-    <div class="fade-item">
-      <h3 class="text-xl font-semibold text-white mb-3">Social</h3>
-      <ul class="space-y-2 text-gray-400">
-        <li><a href="#" class="hover:text-white transition">GitHub</a></li>
-        <li><a href="#" class="hover:text-white transition">Facebook</a></li>
-        <li><a href="#" class="hover:text-white transition">LinkedIn</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="text-center text-gray-500 mt-10 relative z-10 fade-item">
-    © 2025 Sojib — All rights reserved.
-  </div>
-
-</footer>
-</div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
