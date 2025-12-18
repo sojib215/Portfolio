@@ -3,213 +3,250 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects</title>
+    <title>Projects | Infinite Scroll Design</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="images/online-resume.png" type="image/x-icon" />
+    <style>
+      body { background-color: #020617; overflow-x: hidden; }
+      
+      /* --- স্লাইডার কন্টেইনার এবং দুই পাশে ফেইড ইফেক্ট --- */
+      .slider-container-fixed {
+        max-width: 1280px; 
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        padding: 40px 0;
+      }
+
+      .slider-container-fixed::before,
+      .slider-container-fixed::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 150px;
+        height: 100%;
+        z-index: 10;
+        pointer-events: none;
+      }
+      .slider-container-fixed::before {
+        left: 0;
+        background: linear-gradient(to right, #020617 25%, transparent);
+      }
+      .slider-container-fixed::after {
+        right: 0;
+        background: linear-gradient(to left, #020617 25%, transparent);
+      }
+
+      .slider-track {
+        display: flex;
+        width: max-content;
+        /* ৬টি কার্ডের জন্য ১৫-১৮ সেকেন্ড স্পিড একদম পারফেক্ট হবে */
+        animation: scroll 18s linear infinite;
+      }
+
+      .slider-container-fixed:hover .slider-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); } /* অর্ধেক পথ মানে ৬টি কার্ড পার হওয়া */
+      }
+
+      /* --- কার্ড ডিজাইন ও এনিমেশন --- */
+      .project-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 2rem;
+        padding: 2.5rem;
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 340px;
+        margin: 0 15px;
+        white-space: normal;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .project-card:hover {
+        transform: scale(1.05) translateY(-10px);
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.3);
+        z-index: 20;
+      }
+
+      .project-card::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 20%;
+        width: 60%;
+        height: 12px;
+        background: var(--glow-color, #6366f1);
+        filter: blur(20px);
+        opacity: 0.4;
+      }
+
+      .project-card .badge {
+        display: inline-block;
+        padding: 4px 14px;
+        border-radius: 20px;
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .project-card .title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: white;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+
+      .project-card .desc { 
+        color: #94a3b8; 
+        font-size: 0.95rem; 
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .project-card .btn {
+        width: 100%; 
+        padding: 0.9rem; 
+        border-radius: 1.2rem;
+        background: var(--btn-grad);
+        color: white; 
+        font-weight: 700; 
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .project-card .btn:hover { 
+        filter: brightness(1.2);
+        box-shadow: 0 0 20px var(--glow-color);
+      }
+
+      /* --- অরিজিনাল ফুটার --- */
+      .footer-premium {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 80px 0 40px;
+        margin-top: 60px;
+      }
+    </style>
   </head>
   <body>
-    <div id="navbar-placeholder"></div>
-
-    <div class="bg-gray-900 text-gray-100">
-      <!-- Header -->
-      <header
-        class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-10 rounded-b-3xl shadow-xl overflow-hidden animate-fade-slide"
-      >
-        <div
-          class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"
-        ></div>
-
-        <h1
-          class="text-4xl md:text-5xl font-extrabold text-center text-white tracking-wide"
-        >
-          My Projects
+      <div id="navbar-placeholder"></div>
+    <div class="bg-gray-950 text-gray-100 min-h-screen">
+      <header class="relative bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 p-16 rounded-b-[3rem] shadow-2xl overflow-hidden border-b border-white/5">
+        <h1 class="text-5xl md:text-6xl font-black text-center text-white tracking-tighter">
+          Master <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-pink-500">Projects</span>
         </h1>
-        <p class="mt-2 text-center text-gray-300 text-lg">
-          Showcasing my creative works
-        </p>
+        <p class="mt-4 text-center text-gray-400 text-lg uppercase tracking-widest">Infinite Horizontal Showcase</p>
       </header>
 
-      <!-- Projects Section -->
-      <section
-        class="max-w-6xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        <!-- CARD -->
-        <div class="project-card card">
-          <h2 class="title">Portfolio Website</h2>
-          <p class="desc">
-            Modern portfolio built with Html & CSS. It was my frist project.
-          </p>
+      <div class="slider-container-fixed py-24">
+        <div class="slider-track">
+          
+          <div class="project-card" style="--glow-color: #ec4899;">
+            <div><span class="badge text-purple-400">UI/UX Design</span><h2 class="title">Portfolio Website</h2><p class="desc">Modern portfolio built with HTML & CSS. It showcases my skills and journey.</p></div>
+            <button onclick="openPopup('Portfolio Website', 'https://sojib215.github.io/web-dev-protfolio/')" class="btn" style="--btn-grad: linear-gradient(90deg, #ec4899, #8b5cf6)">View Project</button>
+          </div>
 
-          <button
-            onclick="openPopup('Portfolio Website', 'https://sojib215.github.io/web-dev-protfolio/')"
-            class="btn"
-          >
-            View Project
-          </button>
-        </div>
+          <div class="project-card" style="--glow-color: #f97316;">
+            <div><span class="badge text-orange-400">Service Tool</span><h2 class="title" style="color: #ff7e5f;">Emergency Hotline</h2><p class="desc">Critical directory for essential emergency service numbers in Bangladesh.</p></div>
+            <button onclick="openPopup('Emergency-Hotline', 'https://sojib215.github.io/Assainment-5/')" class="btn" style="--btn-grad: linear-gradient(90deg, #f97316, #e11d48)">View Project</button>
+          </div>
 
-        <div class="project-card card">
-          <h2 class="title">Emergency-Hotline</h2>
-          <p class="desc">
-            An emergency hotline services build with all needed number's.
-          </p>
+          <div class="project-card" style="--glow-color: #22c55e;">
+            <div><span class="badge text-green-400">E-Commerce</span><h2 class="title">Flower Shop</h2><p class="desc">Elegant e-commerce UI with smooth animations and a beautiful gallery.</p></div>
+            <button onclick="openPopup('Flower Shop', 'https://sojib215.github.io/Second-assainment/')" class="btn" style="--btn-grad: linear-gradient(90deg, #22c55e, #16a34a)">View Project</button>
+          </div>
 
-          <button
-            onclick="openPopup('Emergency-Hotline', 'https://sojib215.github.io/Assainment-5/')"
-            class="btn"
-          >
-            View Project
-          </button>
-        </div>
+          <div class="project-card" style="--glow-color: #3b82f6;">
+            <div><span class="badge text-blue-400">Web Portal</span><h2 class="title">News TV</h2><p class="desc">A dynamic news platform design focusing on visual storytelling and layout.</p></div>
+            <button onclick="openPopup('News TV', '#')" class="btn" style="--btn-grad: linear-gradient(90deg, #3b82f6, #2563eb)">View Project</button>
+          </div>
 
-        <div class="project-card card">
-          <h2 class="title">Flower Shop</h2>
-          <p class="desc">
-            Responsive flower shopping interface with animations.
-          </p>
+          <div class="project-card" style="--glow-color: #a855f7;">
+            <div><span class="badge text-purple-400">Productivity</span><h2 class="title">Task Manager</h2><p class="desc">Efficient task management tool with interactive UI and dark mode support.</p></div>
+            <button onclick="openPopup('Task Manager', '#')" class="btn" style="--btn-grad: linear-gradient(90deg, #a855f7, #6366f1)">View Project</button>
+          </div>
 
-          <button
-            onclick="openPopup('Flower Shop', 'https://sojib215.github.io/Second-assainment/')"
-            class="btn"
-          >
-            View Project
-          </button>
-        </div>
+          <div class="project-card" style="--glow-color: #06b6d4;">
+            <div><span class="badge text-cyan-400">Landing Page</span><h2 class="title">Travel App</h2><p class="desc">A vibrant landing page for travel enthusiasts with modern design patterns.</p></div>
+            <button onclick="openPopup('Travel App', '#')" class="btn" style="--btn-grad: linear-gradient(90deg, #06b6d4, #0891b2)">View Project</button>
+          </div>
 
-        <div class="project-card card">
-          <h2 class="title">News TV</h2>
-          <p class="desc">
-            A news reporting channel made for fun Nothing else.
-          </p>
+          <div class="project-card" style="--glow-color: #ec4899;">
+            <div><span class="badge text-purple-400">UI/UX Design</span><h2 class="title">Portfolio Website</h2><p class="desc">Modern portfolio built with HTML & CSS.</p></div>
+            <button onclick="openPopup('Portfolio Website', 'https://sojib215.github.io/web-dev-protfolio/')" class="btn" style="--btn-grad: linear-gradient(90deg, #ec4899, #8b5cf6)">View Project</button>
+          </div>
+          <div class="project-card" style="--glow-color: #f97316;">
+            <div><span class="badge text-orange-400">Service Tool</span><h2 class="title" style="color: #ff7e5f;">Emergency Hotline</h2><p class="desc">Critical directory for emergency service numbers.</p></div>
+            <button onclick="openPopup('Emergency-Hotline', 'https://sojib215.github.io/Assainment-5/')" class="btn" style="--btn-grad: linear-gradient(90deg, #f97316, #e11d48)">View Project</button>
+          </div>
+          <div class="project-card" style="--glow-color: #22c55e;">
+            <div><span class="badge text-green-400">E-Commerce</span><h2 class="title">Flower Shop</h2><p class="desc">Elegant e-commerce UI with smooth animations.</p></div>
+            <button onclick="openPopup('Flower Shop', 'https://sojib215.github.io/Second-assainment/')" class="btn" style="--btn-grad: linear-gradient(90deg, #22c55e, #16a34a)">View Project</button>
+          </div>
+          <div class="project-card" style="--glow-color: #3b82f6;">
+            <div><span class="badge text-blue-400">Web Portal</span><h2 class="title">News TV</h2><p class="desc">A dynamic news platform design.</p></div>
+            <button onclick="openPopup('News TV', '#')" class="btn" style="--btn-grad: linear-gradient(90deg, #3b82f6, #2563eb)">View Project</button>
+          </div>
+          <div class="project-card" style="--glow-color: #a855f7;">
+            <div><span class="badge text-purple-400">Productivity</span><h2 class="title">Task Manager</h2><p class="desc">Efficient task management tool.</p></div>
+            <button onclick="openPopup('Task Manager', '#')" class="btn" style="--btn-grad: linear-gradient(90deg, #a855f7, #6366f1)">View Project</button>
+          </div>
+          <div class="project-card" style="--glow-color: #06b6d4;">
+            <div><span class="badge text-cyan-400">Landing Page</span><h2 class="title">Travel App</h2><p class="desc">A vibrant landing page for travel enthusiasts.</p></div>
+            <button onclick="openPopup('Travel App', '#')" class="btn" style="--btn-grad: linear-gradient(90deg, #06b6d4, #0891b2)">View Project</button>
+          </div>
 
-          <button
-            onclick="openPopup('News TV', 'https://sojib215.github.io/Anwar-TV/')"
-            class="btn"
-          >
-            View Project
-          </button>
-        </div>
-
-        <div class="project-card card">
-          <h2 class="title">Tree Information</h2>
-          <p class="desc">
-            And website for learn more about trees to Increase knowledge.
-          </p>
-
-          <button
-            onclick="openPopup('Tree Information', 'https://willowy-beijinho-ccbd6c.netlify.app')"
-            class="btn"
-          >
-            View Project
-          </button>
-        </div>
-
-        <div class="project-card card">
-          <h2 class="title">UI Template</h2>
-          <p class="desc">
-            A normal UI template page for beginners to use not for real.
-          </p>
-
-          <button
-            onclick="openPopup('UI Template', 'https://sojib215.github.io/Frist-assainment/')"
-            class="btn"
-          >
-            View Project
-          </button>
-        </div>
-      </section>
-
-      <!-- POPUP MODAL -->
-      <div
-        id="popup"
-        class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[999]"
-      >
-        <div
-          id="popupBox"
-          class="bg-gray-900 rounded-xl p-6 w-80 text-center border border-gray-700 shadow-xl scale-75 opacity-0 transition-all duration-300"
-        >
-          <h1
-            id="popupTitle"
-            class="text-xl font-semibold text-white mb-3"
-          ></h1>
-
-          <a
-            id="popupLink"
-            href="#"
-            target="_blank"
-            class="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium hover:bg-indigo-700 block"
-          >
-            Open Project
-          </a>
-
-          <button
-            onclick="closePopup()"
-            class="mt-4 text-gray-300 w-24 hover:text-white transition hover:bg-indigo-700 px-4 py-2 rounded-lg"
-          >
-            Close
-          </button>
         </div>
       </div>
 
-      <!-- Footer -->
+      <div id="popup" class="hidden fixed inset-0 bg-black/90 backdrop-blur-xl flex items-center justify-center z-[999] p-6">
+        <div id="popupBox" class="bg-gray-900 border border-white/10 rounded-[2.5rem] p-10 w-full max-w-sm text-center shadow-2xl">
+          <h1 id="popupTitle" class="text-3xl font-black text-white mb-6 tracking-tight"></h1>
+          <a id="popupLink" href="#" target="_blank" class="bg-indigo-600 p-4 rounded-2xl text-white font-black block hover:bg-indigo-500 transition-all text-lg shadow-xl">EXPLORE LIVE</a>
+          <button onclick="closePopup()" class="mt-6 text-gray-500 font-bold hover:text-white transition">DISMISS</button>
+        </div>
+      </div>
 
-      <footer
-        class="bg-gray-900 border-t border-gray-700/50 mt-16 py-10 relative overflow-hidden footer-animate"
-      >
-        <!-- Background subtle glow -->
-        <div
-          class="absolute inset-0 opacity-10 bg-gradient-to-br from-indigo-600 to-purple-600 blur-3xl"
-        ></div>
-
-        <div
-          class="max-w-6xl mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-3 gap-10"
-        >
-          <!-- Column 1 -->
-          <div class="fade-item">
-            <h3 class="text-xl font-semibold text-white mb-3">Sojib.dev</h3>
-            <p class="text-gray-400 leading-relaxed">
-              Building clean interfaces & modern web experiences.
-            </p>
+      <footer class="footer-premium text-center">
+        <div class="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+          <div class="text-left"><h3 class="text-2xl font-black">SOJIB<span class="text-indigo-500">.</span></h3><p class="text-gray-500 mt-2">Crafting high-end digital solutions.</p></div>
+          <div class="flex flex-col gap-2 text-gray-400">
+            <a href="#" class="hover:text-white transition">Showcase</a>
+            <a href="#" class="hover:text-white transition">Archive</a>
           </div>
-
-          <!-- Column 2 -->
-          <div class="fade-item">
-            <h3 class="text-xl font-semibold text-white mb-3">Quick Links</h3>
-            <ul class="space-y-2 text-gray-400">
-              <li><a href="#" class="hover:text-white transition">Home</a></li>
-              <li>
-                <a href="#" class="hover:text-white transition">Projects</a>
-              </li>
-              <li>
-                <a href="#" class="hover:text-white transition">Contact</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column 3 -->
-          <div class="fade-item">
-            <h3 class="text-xl font-semibold text-white mb-3">Social</h3>
-            <ul class="space-y-2 text-gray-400">
-              <li>
-                <a href="#" class="hover:text-white transition">GitHub</a>
-              </li>
-              <li>
-                <a href="#" class="hover:text-white transition">Facebook</a>
-              </li>
-              <li>
-                <a href="#" class="hover:text-white transition">LinkedIn</a>
-              </li>
-            </ul>
+          <div class="flex gap-6 justify-end text-gray-400">
+            <a href="#" class="hover:text-white transition font-bold">GITHUB</a>
+            <a href="#" class="hover:text-white transition font-bold">LINKEDIN</a>
           </div>
         </div>
-
-        <div class="text-center text-gray-500 mt-10 relative z-10 fade-item">
-          © 2025 Sojib — All rights reserved.
-        </div>
+        <p class="text-gray-600 text-xs tracking-widest">© 2025 SOJIB — ALL RIGHTS RESERVED.</p>
       </footer>
     </div>
 
+    <script>
+      function openPopup(title, link) {
+        document.getElementById('popupTitle').innerText = title;
+        document.getElementById('popupLink').href = link;
+        document.getElementById('popup').classList.remove('hidden');
+      }
+      function closePopup() {
+        document.getElementById('popup').classList.add('hidden');
+      }
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
